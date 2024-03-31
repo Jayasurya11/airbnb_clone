@@ -1,6 +1,6 @@
 const express=require("express");
 const dotenv=require("dotenv");
-var jwt = require('jsonwebtoken');
+
 const cors=require("cors")
 const bcrypt= require("bcryptjs")
 const UserModel=require("./model/user");
@@ -35,8 +35,8 @@ app.post("/login", async (req,res)=>{
     if(exist){
         const validuser= await bcrypt.compare(password,exist.password);
         if(validuser){
-            const token=jwt.sign({email:exist.email},"surya",{ expiresIn: '3h' })
-            res.cookie("access_token",token).status(200).send({name:exist.name,email:exist.email, wishlist:exist.wishlist, bookedlist:exist.bookedlist})
+            
+            res.status(200).send({name:exist.name,email:exist.email, wishlist:exist.wishlist, bookedlist:exist.bookedlist})
         }
         else{
             res.send({error:"Email or Password is Incorrect"})
