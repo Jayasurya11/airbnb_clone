@@ -148,6 +148,7 @@ app.get("/place-by-id/:id",async(req,res)=>{
 //search results
 app.get("/search/:q",async(req,res)=>{
     const {q}=req.params;
+    console.log(q);
     const {filter}=req.query;
     if(filter>0){
         if(filter<=100000){
@@ -155,12 +156,16 @@ app.get("/search/:q",async(req,res)=>{
             if(q!=="NA"){
                 var state_one=  await PlaceModel.find({state:{$regex:q,$options:"i"},price:{$lte:filter}});
             }
-            
+            const search_by_country=   await PlaceModel.find({country:{$regex:q,$options:"i"},price:{$lte:filter}});
+            console.log(search_by_country)
             if (search_by_city.length>0){
                 res.send(search_by_city)
             }
             else if(state_one.length>0){
                 res.send(state_one)
+            }
+            else if(search_by_country.length>0){
+                res.send(search_by_country)
             }
             else{
                 res.send([])
@@ -171,12 +176,16 @@ app.get("/search/:q",async(req,res)=>{
             if(q!=="NA"){
                 var state_two=  await PlaceModel.find({state:{$regex:q,$options:"i"},price:{$gt:filter}});
             }   
-            
+            const search_by_country=   await PlaceModel.find({country:{$regex:q,$options:"i"},price:{$gt:filter}});
+            console.log(search_by_country)
             if (search_by_city.length>0){
                 res.send(search_by_city)
             }
             else if(state_two.length>0){
                 res.send(state_two)
+            }
+            else if(search_by_country.length>0){
+                res.send(search_by_country)
             }
             else{
                 res.send([])
@@ -188,11 +197,16 @@ app.get("/search/:q",async(req,res)=>{
         if(q!=="NA"){
             var state_three=  await PlaceModel.find({state:{$regex:q,$options:"i"}});
         }
+        const search_by_country=   await PlaceModel.find({country:{$regex:q,$options:"i"}});
+        console.log(search_by_country)
         if (search_by_city.length>0){
             res.send(search_by_city)
         }
         else if(state_three.length>0){
             res.send(state_three)
+        }
+        else if(search_by_country.length>0){
+            res.send(search_by_country)
         }
         else{
             res.send([])

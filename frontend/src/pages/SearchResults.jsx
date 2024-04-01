@@ -13,6 +13,7 @@ const SearchResults = () => {
         const fetching=async ()=>{
             const response= await axios.get(`${process.env.REACT_APP_SERVER_URL}/search/${q}?filter=${filter}`);
             setPlaces(response.data);
+            console.log(response)
             setIsloaded(true);
         }
         fetching();
