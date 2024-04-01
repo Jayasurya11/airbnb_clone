@@ -166,11 +166,11 @@ else{
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <DemoContainer  components={['DatePicker', 'DatePicker']}>
                                     <DemoItem label="CHECK-IN"  >
-                                    <DatePicker value={checkin}  sx={{width:"100%"}} onChange={(e)=>handleDates(e,"checkin")} minDate={dayjs(Date.now())}
+                                    <DatePicker value={checkin}  sx={{width:{xs:"180px",sm:"220px"}}} onChange={(e)=>handleDates(e,"checkin")} minDate={dayjs(Date.now())}
                                      maxDate={dayjs(Date.now()+86400000*30)}/>
                                     </DemoItem>
                                     <DemoItem label="CHECK-OUT">
-                                    <DatePicker value={checkout} sx={{width:"100%"}}
+                                    <DatePicker value={checkout} sx={{width:{xs:"180px",sm:"220px"}}}
                                     onChange={(e)=>handleDates(e,"checkout")}
                                     minDate={checkin?dayjs(new Date(checkin.$y,checkin.$M,checkin.$D).getTime()+86400000):dayjs(Date.now()+86400000)}  
                                     maxDate={checkin?dayjs(new Date(checkin.$y,checkin.$M,checkin.$D).getTime()+86400000*7):dayjs(Date.now()+86400000*7)}/>
