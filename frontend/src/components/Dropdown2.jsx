@@ -13,18 +13,13 @@ const Dropdown2 = () => {
         toast.success("Loged out")
     }
   return (
-    <Dropdown  label="" renderTrigger={() => <span className='flex rounded-xl border border-gray-300 py-2 px-1 lg:px-2 text-2x  hovereffect' ><HiBars3/><FaUserCircle/></span>} dismissOnClick={true}>
-                    
-        <Dropdown.Item className='px-4 w-36 '><button onClick={handleLogout}>Logout</button></Dropdown.Item>
-        <Dropdown.Item className='px-4 w-36' ><Link to="/host-a-place">Host a Place</Link></Dropdown.Item>
-        <Dropdown.Item className='px-4 w-36'><Link to="/hosted-places">Hosted Places</Link></Dropdown.Item>
-        <Dropdown.Item className='px-4 w-36'><Link to="/wish-list">Wish List</Link></Dropdown.Item>
-        <Dropdown.Item className='px-4 w-36'><Link to="/booked-places">Booked Places</Link></Dropdown.Item>
-        
-        
-                    
-                    
-                    
+    <Dropdown  label="" renderTrigger={() => <span className='flex rounded-xl border border-gray-300  py-2 px-1 lg:px-2 text-2x  hovereffect' ><HiBars3/><FaUserCircle/></span>} dismissOnClick={true}>
+              
+        <Dropdown.Item className="w-32 text-center"><button onClick={handleLogout}>Logout</button></Dropdown.Item>
+        <Dropdown.Item className="w-32 text-center" ><Link to="/host-a-place">Host a Place</Link></Dropdown.Item>
+        <Dropdown.Item className="w-32 text-center"><Link to="/hosted-places">Hosted Places</Link></Dropdown.Item>
+        <Dropdown.Item className="w-32 text-center"><Link to="/wish-list">Wish List</Link></Dropdown.Item>
+        <Dropdown.Item className="w-32 text-center"><Link to="/booked-places">Booked Places</Link></Dropdown.Item>           
     </Dropdown>
   )
 }

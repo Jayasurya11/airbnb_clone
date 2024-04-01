@@ -59,12 +59,14 @@ const BookedCard=({data,allowedit})=> {
         <Link to={`/place/${data.booked._id}`}>
         <CardContent className='h-60 flex flex-col justify-evenly'>
             <Typography sx={{ color: 'text.primary', fontSize: 20, fontWeight: 'bold' }} variant='p'>{data.booked.name}</Typography> 
-            <Typography variant="body2" color="text.secondary" className='flex justify-between'><p>{data.booked.city},{data.booked.state} </p><p><p>{(new Date(Date.now()).getTime()>new Date(data.end.substring(6),data.end.substring(3,5),data.end.substring(0,2)).getTime())?<DoneAllIcon/>:null}</p></p> </Typography>
+            <Typography variant="body2" color="text.secondary" className='flex justify-between'><p>{data.booked.city},{data.booked.state} </p><p><p>{(new Date(Date.now()).getTime()>new Date(data.end.substring(6),(Number(data.end.substring(3,5))-1).toString(),data.end.substring(0,2)).getTime()+86400000)?<DoneAllIcon/>:null}</p></p> </Typography>
             <Typography variant="body2" color="text.secondary">{data.booked.bed===1? <span>{data.booked.bed} bed</span>:<span>{data.booked.bed} beds</span>}</Typography>
             <Typography>{data.booked.price.toLocaleString("hi-IN", {style:"currency", currency:"INR",minimumFractionDigits: 0,})}<span className='text-gray-500'> / night</span></Typography>
             <Typography sx={{fontSize:15}}><span className='font-bold text-xs'>TOTAL:</span> {data.booked.price.toLocaleString("hi-IN", {style:"currency", currency:"INR",minimumFractionDigits: 0,})} x {data.nights} {data.nights===1?"night":"nights"} = {(data.booked.price * data.nights).toLocaleString("hi-IN", {style:"currency", currency:"INR",minimumFractionDigits: 0,})}</Typography>
             <Typography sx={{fontSize:15}}><span className='font-bold text-xs'>CHECKIN: </span>{data.start} | <span className='font-bold text-xs'>CHECKOUT: </span>{data.end}</Typography>
-          
+            {/* <p>{new Date(Date.now()).getTime()}</p>
+            <p>{new Date(data.end.substring(6),(Number(data.end.substring(3,5))-1).toString(),data.end.substring(0,2)).toDateString()}</p>
+            <p>{(new Date(Date.now()).getTime()>new Date(data.end.substring(6),(Number(data.end.substring(3,5))-1).toString(),data.end.substring(0,2)).getTime())?"True":"False"}</p> */}
         </CardContent>
       </Link>
     </Card>

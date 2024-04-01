@@ -139,7 +139,7 @@ const CreateList = () => {
   return (
     <div className='w-screen '>
         
-        <form className='flex flex-col gap-6 items-center justify-center  my-8 px-2 lg:px-32' onSubmit={handleSubmit}>
+        <form className='flex flex-col gap-6 items-center justify-center  my-8 px-8 md:px-12 lg:px-16 ' onSubmit={handleSubmit}>
             <h1 className='font-bold text-2xl '>Host a Place</h1>
             <div className='w-full'>
                 <label htmlFor='name' className='w-full font-bold'>Place Name</label>

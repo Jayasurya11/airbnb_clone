@@ -22,7 +22,7 @@ const Navbar = () => {
     }
     
   return (
-    <>
+    <div>
         <div className='hidden justify-between w-screen px-16 pt-8  lg:flex '> 
             <Link to="/" className="xs:text-md lg:text-2xl text-red-500 flex gap-2 items-center">
                 <FaAirbnb /> airbnb
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         {/* sm */}
-        <div className='flex flex-col w-screen lg:hidden pt-4 px-4 '>
+        <div className='flex flex-col w-screen lg:hidden pt-4 px-8 md:px-12  '>
             <div className='flex justify-between items-center w-100'> 
                 <Link to="/" className="text-md  text-red-500 flex gap-2 items-center">
                     <FaAirbnb /> airbnb
@@ -62,17 +62,17 @@ const Navbar = () => {
                     </div>
                 </div> 
             </div>
-            <div className='grid grid-cols-5 gap-3 border rounded-xl border-gray-400 box-border lg:px-4 my-2 shadow-md'>
+            <div className='grid grid-cols-5 gap-3 border rounded-xl border-black box-border lg:px-4 my-2 md:py-4 shadow-md'>
                 <div className='px-3 text-sm text-center'>Any where</div>
-                <div className='border border-y-0 border-gray-300 text-sm text-center px-3'>Any week</div>
-                <form className='col-span-3 flex box-border justify-center items-center gap-2' onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Search by location" className='border-0 rounded-xl col-span-3 w-40 h-5' value={search} onChange={(e)=>setSearch(e.target.value)} />
+                <div className='border border-y-0 border-black text-sm text-center px-3'>Any week</div>
+                <form className='col-span-3 flex box-border justify-center items-center gap-2 px-2 md:px-8 lg:px-2' onSubmit={handleSubmit}>
+                    <input type="text" placeholder="Search by location" className='border-0 rounded-xl col-span-3 w-full  h-5 md:h-8 ' value={search} onChange={(e)=>setSearch(e.target.value)} />
                     <button type="submit" className='bg-red-500 flex items-center justify-center  rounded-full  text-center w-6 h-6  text-white'><CiSearch className='text-lg font-bold '/></button>
                 </form>   
             </div>
             
         </div>
-    </>
+    </div>
   )
 }
 

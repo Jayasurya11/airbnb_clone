@@ -14,6 +14,7 @@ import SearchResults from "./pages/SearchResults";
 import WishList from "./pages/WishList";
 import BookedPlaces from "./pages/BookedPlaces";
 import PrivateRoute from "./pages/PrivateRoute";
+import ImagesPage from "./pages/ImagesPage";
 function App() {
   return (
     <div >
@@ -25,7 +26,7 @@ function App() {
             <Route path="category/:q" element={<CategoryWise/>} />
             <Route path="search/:q" element={<SearchResults/>}/>
           </Route>
-          
+          <Route path="/place/:id/images" element={<ImagesPage/>}/>
           <Route path="login" element={<LoginPage/>}/>
           <Route path="register" element={<RegisterPage/>}/>
           <Route path="host-a-place" element={<PrivateRoute><CreateList/></PrivateRoute>}/>

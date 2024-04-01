@@ -19,7 +19,7 @@ const CategorySelect = () => {
   return (
     <div>
     
-    <div className='grid grid-cols-9 w-screen px-4 lg:px-16 my-2 '>
+    <div className='grid grid-cols-9 w-screen px-8 md:px-12 lg:px-16 my-2 '>
     
         
      <div className="scrollmenu col-span-7 lg:col-span-8 ">
@@ -41,14 +41,14 @@ const CategorySelect = () => {
         <Dropdown label="" renderTrigger={() => <span className='flex justify-center items-center rounded-xl border border-gray-800 py-2  hovereffect col-span-2 lg:col-span-1' ><TuneIcon/> Filters</span>} dismissOnClick={true}>
           
 
-          <Dropdown.Item className=" px-2 lg:px-10" onClick={(e)=>setFilter(0)}>Clear Filters</Dropdown.Item>
-          <Dropdown.Item className="text-center lg:px-10" onClick={(e)=>setFilter(5000)}>&lt; 5k</Dropdown.Item>
-          <Dropdown.Item className="text-center  lg:px-10" onClick={(e)=>setFilter(10000)}>&lt; 10k</Dropdown.Item>
-          <Dropdown.Item className="text-center lg:px-10" onClick={(e)=>setFilter(20000)}>&lt; 20k</Dropdown.Item>
-          <Dropdown.Item className="text-center lg:px-10" onClick={(e)=>setFilter(30000)}>&lt; 30k</Dropdown.Item>
-          <Dropdown.Item className="text-center lg:px-10" onClick={(e)=>setFilter(50000)}>&lt; 50k </Dropdown.Item>
-          <Dropdown.Item  className="text-center lg:px-10" onClick={(e)=>setFilter(100000)}>&lt; 100k </Dropdown.Item>
-          <Dropdown.Item  className="text-center lg:px-10" onClick={(e)=>setFilter(100001)}>&gt; 100k </Dropdown.Item>
+          <Dropdown.Item className=" flex justify-center items-center" onClick={(e)=>setFilter(0)}>Clear Filters</Dropdown.Item>
+          <Dropdown.Item className=" flex justify-center items-center" onClick={(e)=>setFilter(5000)}>&lt; 5k</Dropdown.Item>
+          <Dropdown.Item className="flex justify-center items-center" onClick={(e)=>setFilter(10000)}>&lt; 10k</Dropdown.Item>
+          <Dropdown.Item className="flex justify-center items-center" onClick={(e)=>setFilter(20000)}>&lt; 20k</Dropdown.Item>
+          <Dropdown.Item className="flex justify-center items-center" onClick={(e)=>setFilter(30000)}>&lt; 30k</Dropdown.Item>
+          <Dropdown.Item className="flex justify-center items-center" onClick={(e)=>setFilter(50000)}>&lt; 50k </Dropdown.Item>
+          <Dropdown.Item  className="flex justify-center items-center" onClick={(e)=>setFilter(100000)}>&lt; 100k </Dropdown.Item>
+          <Dropdown.Item  className="flex justify-center items-center" onClick={(e)=>setFilter(100001)}>&gt; 100k </Dropdown.Item>
           
         </Dropdown>
     </div>

@@ -9,6 +9,7 @@ import { BiFridge } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import { GiCctvCamera } from "react-icons/gi";
 import { FaFirstAid } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import { TbAirConditioning } from "react-icons/tb";
 import { GiWashingMachine } from "react-icons/gi";
 import { MdOutlinePool } from "react-icons/md";
@@ -69,6 +70,7 @@ const DetailsPage = () => {
     const {user}=useContext(userContext);
     const navigate=useNavigate();
     const {id}=useParams();
+    const [isloaded,setIsloaded]=useState(false);
    const [checkin,setCheckin]=useState();
    const [checkout,setCheckout]=useState();
    const [nights,setNights]=useState();
@@ -120,27 +122,34 @@ const DetailsPage = () => {
         const fetching= async ()=>{
             const data= await axios.get(`${process.env.REACT_APP_SERVER_URL}/place-by-id/${id}`);
             setPlace(data.data);
+            setIsloaded(true);
+            window.scrollTo(0,0);
         }
         fetching();
-},[id])
+},[id]);
+if(!isloaded){
+    return(<div className='w-screen flex justify-center items-center h-screen '><span class="loader2"></span></div>)
+}
+else{
   return (
-    <div className='px-4 lg:px-16 my-6'>
+    <div className='px-8 md:px-12 lg:px-16 my-6'>
         {place?<div>
-            <h2 className='text-2xl my-2 font-bold'>{place.name} | {place.category}</h2>
-            
-            <div className='grid grid-cols-4 gap-4'>
-                {place.images.map((item,index)=>{
-                    if(index===0) return <img className="row-span-2 col-span-2 h-full max-h-[400px] w-full" alt="" key={index} src={item} />
-                    return(<img className="max-h-48 w-full" key={index} alt="" src={item}/>)})
-                }
-            </div>
+            <h2 className='text-lg lg:text-2xl my-2 font-bold'>{place.name} | {place.category}</h2>
+            <Link to={`/place/${place._id}/images`}>
+                <div className='grid grid-cols-4 grid-rows-2 gap-2 lg:gap-4 h-[150px] lg:h-[350px]'>
+                    {place.images.map((item,index)=>{
+                        if(index===0) return(<div className="row-span-2 col-span-2"><img  alt="" className='w-full h-full' key={index} src={item} /></div>)
+                        return(<div className="col-span-1 row-span-1" ><img key={index} alt=""  className='w-full h-full' src={item}/></div>)})
+                    }
+                </div>
+            </Link>
             <div className='grid grid-cols-1 lg:grid-cols-5 gap-2 lg:gap-12 mt-4  lg:mb-8'>
                 <div className='lg:col-span-3'>
-                    <p className='font-bold text-xl'>{place.city},{place.state==="NA"?null:`${place.state},`}{place.country}</p>
+                    <p className='font-bold text-lg lg:text-xl'>{place.city},{place.state==="NA"?null:`${place.state},`}{place.country}</p>
                     <p>{place.guest} Guests . {place.bed} Beds . {place.bedroom} Bedrooms . {place.bathroom} Bathrooms</p>
                 
                     <div className='border my-4  border-gray-300'></div>
-                    <p className='text-xl my-4'>Hosted By {place.hosted_by}</p>
+                    <p className='text-lg lg:text-xl my-4'>Hosted By {place.hosted_by}</p>
                     <div className='border border-gray-300'></div>
                     <p className='my-4'>{place.description}</p>
                     <div className='border border-gray-300'></div>
@@ -186,6 +195,7 @@ const DetailsPage = () => {
         
     </div>
   )
+}
 }
 
 export default DetailsPage

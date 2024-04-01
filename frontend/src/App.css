@@ -45,6 +45,61 @@ div.scrollmenu {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+  }.loader {
+    width: 345px;
+    height: 220px;
+    background:
+        linear-gradient(0.25turn, transparent, #FFF, transparent),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 345px 250px, 345px 130px, 100px 15px, 150px 15px;
+    background-position: -345px 0, 0 0, 15px 150px, 15px 180px;
+    animation: loading 1.5s infinite;
+}
 
-  
+@keyframes loading {
+  to {
+    background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
+  }
+}
+
+
+
+
+.loader2, .loader2:before, .loader2:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader2 {
+  color: #888;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.loader2:before,
+.loader2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader2:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.loader2:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+  40% { box-shadow: 0 2.5em 0 0 }
+}
+    

@@ -32,8 +32,8 @@ const LoginPage = () => {
     }
     
   return (
-    <div>
-        <div className=' w-full flex flex-col h-[550px] items-center justify-center '>
+    <div className='pb-12'>
+        <div className=' w-full flex flex-col  items-center justify-center '>
             <h2 className='text-xl font-bold my-2'>Login</h2>
             {error?<p className='text-red-500 '>{error}</p>:null}
             <form className='flex flex-col gap-4' >
