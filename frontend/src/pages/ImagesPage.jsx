@@ -22,7 +22,7 @@ const ImagesPage = () => {
         return (
             <div className='px-8 md:px-12 lg:px-16 mt-4'>
                 <p className='flex gap-3 items-center font-bold '><Link className="hover:scale-125" to={`/place/${place?._id}`}><FaChevronLeft/></Link>{place?.name}</p>
-                {place?.images?.map((item,index)=><img src={item} key={index} height="200px" className='w-screen my-3' alt="image"/>)}
+                {place?.images?.map((item,index)=><img src={item} key={index}  className=' max-h-[350px] lg:max-h-[600px] w-screen my-3' alt="image"/>)}
             </div>
           )
     }
