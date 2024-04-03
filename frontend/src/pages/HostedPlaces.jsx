@@ -37,7 +37,7 @@ const HostedPlaces = () => {
                 <div className='w-100 mt-4 w-screen px-8 md:px-12 lg:px-16 my-8'>
                     <h2 className='font-bold text-xl my-2'>Hosted by {user?.name}</h2>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8'>
-                        {places.map((item,index)=><SingleCard allowedit={true} data={item} key={index}/>)}
+                        {places.reverse().map((item,index)=><SingleCard allowedit={true} data={item} key={index}/>)}
                     </div>
                 </div>
               )

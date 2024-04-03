@@ -62,10 +62,16 @@ app.post("/register",async (req,res)=>{
 //Upload 
 app.post("/become-a-host",async(req,res)=>{
     const{hosted_by,email,name,category,city,state,country, description,guest,bed,bedroom,bathroom,price,images,benefits}=req.body;
-
-    const place=  new PlaceModel({hosted_by,email,name,category,city,state,country, description,guest,bed,bedroom,bathroom,price,images,benefits});
-    place.save();
-    res.send(place);
+    const existing=await PlaceModel.findOne({name,city,state,country,guest});
+    if(existing){
+        res.status(500).send({message:"Already Exists"});
+    }
+    else{
+        const place=  new PlaceModel({hosted_by,email,name,category,city,state,country, description,guest,bed,bedroom,bathroom,price,images,benefits});
+        place.save();
+        res.status(200).send({message:"Hosted Successfully"});
+    }
+    
 })
 
 // update 

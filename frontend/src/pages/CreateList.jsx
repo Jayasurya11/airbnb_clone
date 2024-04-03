@@ -114,24 +114,44 @@ const CreateList = () => {
     }
     const handleSubmit=async (e)=>{
         e.preventDefault();
-        await axios.post(`${process.env.REACT_APP_SERVER_URL}/become-a-host`,{
-            hosted_by:user?.name, email:user?.email, name:name.trim(),category, city:city.trim() , state:state.trim() || "NA", country:country.trim() , description, guest,bed,bathroom,bedroom, price,benefits,images
-        });
-        setName("");
-        navigate("/host-a-place");
-        setDescription("");
-        setCity("");
-        setState("");
-        setCountry("");
-        setGuest(1);
-        setBed(1);
-        setBedroom(1);
-        setBathroom(1);
-        setPrice(0);
-        setImage("");
-        setImages([]);
-        setBenefits([]);
-        toast.success("Hosted Successfully");
+        try{
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/become-a-host`,{
+                hosted_by:user?.name, email:user?.email, name:name.trim(),category, city:city.trim() , state:state.trim() || "NA", country:country.trim() , description, guest,bed,bathroom,bedroom, price,benefits,images
+            });
+            setName("");
+            navigate("/host-a-place");
+            setDescription("");
+            setCity("");
+            setState("");
+            setCountry("");
+            setGuest(1);
+            setBed(1);
+            setBedroom(1);
+            setBathroom(1);
+            setPrice(0);
+            setImage("");
+            setImages([]);
+            setBenefits([]);
+            toast.success("Hosted Successfully");
+            
+        }
+        catch(e){
+            setName("");
+            navigate("/host-a-place");
+            setDescription("");
+            setCity("");
+            setState("");
+            setCountry("");
+            setGuest(1);
+            setBed(1);
+            setBedroom(1);
+            setBathroom(1);
+            setPrice(0);
+            setImage("");
+            setImages([]);
+            setBenefits([]);
+            toast.error("Already Exists")
+        }
         
         
     }
@@ -170,6 +190,9 @@ const CreateList = () => {
                         <option value="Desert">Desert</option>
                         <option value="Lake">Lake</option>
                         <option value="Castle">Castle</option>
+                        <option value="Luxury">Luxury</option>
+                        <option value="NationalParks">National Parks</option>
+                        <option value="Farms">Farms</option>
 
                     </select>
                     </div>

@@ -1,18 +1,20 @@
 import React, { useContext } from 'react'
 import { FaUmbrellaBeach } from "react-icons/fa";
 import { Dropdown } from "flowbite-react";
-import { GiDesert } from "react-icons/gi";
+import { GiDesert, GiForest } from "react-icons/gi";
 import { GiSwamp } from "react-icons/gi";
 import { Link, Outlet } from 'react-router-dom';
 import { MdOutlinePool } from "react-icons/md";
-
+import { GiFarmer } from "react-icons/gi";
 import { GiModernCity } from "react-icons/gi";
 import { FaPersonSkiing } from "react-icons/fa6";
 import { GiCampingTent } from "react-icons/gi";
 import TuneIcon from '@mui/icons-material/Tune';
 import { GiVillage } from "react-icons/gi";
+import { MdOutlineForest } from "react-icons/md";
 import { userContext } from '../context/context';
 import { GiCastle } from "react-icons/gi";
+import { IoDiamondOutline } from "react-icons/io5";
 const CategorySelect = () => {
   
   const {setFilter}=useContext(userContext);
@@ -27,12 +29,18 @@ const CategorySelect = () => {
         <Link to="/category/BeachFront" className=' border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2  lg:text-md'><FaUmbrellaBeach />Beach Front</div></Link>
         <Link to="/category/AmazingPools" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><MdOutlinePool/> Amazing Pools</div></Link>
         <Link to="/category/Cities" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"]  lg:px-8 text-sm  lg:gap-2 lg:text-md'><GiModernCity/> Iconic Cities</div></Link>
+        <Link to="/category/Luxury" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><IoDiamondOutline/> Luxury</div></Link>
         <Link to="/category/Skiing" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"]  lg:px-8 text-sm lg:gap-2 lg:text-md'><FaPersonSkiing/> Skiing</div></Link>
         <Link to="/category/Desert" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"]  lg:px-8 text-sm lg:gap-2 lg:text-md'><GiDesert/> Desert</div></Link>
         <Link to="/category/Lake" className='border border-gray-300 flex rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"]  lg:px-8 text-sm lg:gap-2 lg:text-md'><GiSwamp/> Lake </div></Link>
         <Link to="/category/Camping" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"]  lg:px-8 text-sm lg:gap-2 lg:text-md'><GiVillage/> Camping</div></Link>
         <Link to="/category/Countryside" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><GiCampingTent/> Countryside</div></Link>
         <Link to="/category/Castle" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><GiCastle/> Castle</div></Link>
+        <Link to="/category/NationalParks" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><MdOutlineForest/> National Parks</div></Link>
+        <Link to="/category/Farms" className='border border-gray-300 rounded-md'><div className='flex flex-col lg:flex-row justify-center items-center w-["80px"] lg:min-w-["150px"] lg:px-8 text-sm lg:gap-2 lg:text-md'><GiFarmer/> Farms</div></Link>
+        
+        
+        
         
     </div>
 

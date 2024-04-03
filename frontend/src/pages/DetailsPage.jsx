@@ -136,7 +136,7 @@ else{
         {place?<div>
             <h2 className='text-lg lg:text-2xl my-2 font-bold'>{place.name} | {place.category}</h2>
             <Link to={`/place/${place._id}/images`}>
-                <div className='grid grid-cols-4 grid-rows-2 gap-2 lg:gap-4 h-[200px] lg:h-[350px]'>
+                <div className='grid grid-cols-4 grid-rows-2 gap-2 lg:gap-4 h-[200px] lg:h-[400px]'>
                     {place.images.map((item,index)=>{
                         if(index===0) return(<div className="row-span-2 col-span-2"><img  alt="" className='w-full h-full' key={index} src={item} /></div>)
                         return(<div className="col-span-1 row-span-1" ><img key={index} alt=""  className='w-full h-full' src={item}/></div>)})

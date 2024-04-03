@@ -212,6 +212,9 @@ const EditPlace= () => {
                         <option value="Desert">Desert</option>
                         <option value="Lake">Lake</option>
                         <option value="Castle">Castle</option>
+                        <option value="Luxury">Luxury</option>
+                        <option value="NationalParks">National Parks</option>
+                        <option value="Farms">Farms</option>
 
                     </select>
                     </div>
