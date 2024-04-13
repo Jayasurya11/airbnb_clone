@@ -178,10 +178,10 @@ const CreateList = () => {
                         </div>
                     </div>
                     
-                    <div className='col-span-2 lg:col-span-1 grid grid-cols-1'>
+                    <div className='col-span-2 lg:col-span-1 grid grid-cols-1 row-span-2'>
                     <label htmlFor='category' className='font-bold'>Category</label>
                     <select name="cars" id="category" value={category} onChange={(e)=>setCategory(e.target.value)} className='rounded-xl row-span-1' >
-                        <option value="BeachFront">Beach Front</option>
+                        <option value="BeachFront" >Beach Front</option>
                         <option value="Camping">Camping</option>
                         <option value="AmazingPools">Amazing Pools</option>
                         <option value="Cities">Cities</option>
