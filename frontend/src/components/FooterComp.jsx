@@ -12,8 +12,8 @@ const FooterComp = () => {
         <p className='text-gray-500'>© 2024 Airbnb - Jayasurya E</p>
         <Footer.LinkGroup className='flex justify-center items-center gap-4 lg:gap-12'>
           <a href="https://www.linkedin.com/in/jayasurya-e-bbbbb9207/" target="_blank"><FaLinkedin/></a>
-          <a href="https://jayasurya11.github.io/portfolio/" target="_blank"><MdWork/></a>
-          <a href="mailto:jayasuryae11@gmail.com" ><MdOutlineMail/></a>          
+         
+          <a href="mailto:vh10412eee19@velhightech.com" ><MdOutlineMail/></a>          
         </Footer.LinkGroup>
         </Footer>
     </div>
